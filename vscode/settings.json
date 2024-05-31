@@ -32,7 +32,7 @@
     "editorBracketHighlight.foreground6": "#87ceeb"
   },
 
-  // =============
+  // ==============
   // Terminal
   // ==============
   "terminal.integrated.fontSize": 16,
