@@ -33,6 +33,11 @@
   },
 
   // ==============
+  // Terminal
+  // ==============
+  "terminal.integrated.fontSize": 16,
+
+  // ==============
   //  Explorer
   // ==============
   "explorer.confirmDelete": false,
