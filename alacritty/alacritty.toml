@@ -1,0 +1,9 @@
+[font]
+size = 16.0
+normal = { family = "JetBrainsMonoNL Nerd Font" }
+
+[keyboard]
+bindings = [
+  { key = "H", mods = "Command|Shift", action = "SelectPreviousTab" },
+  { key = "L", mods = "Command|Shift", action = "SelectNextTab" },
+]

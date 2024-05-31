@@ -1,0 +1,101 @@
+[
+  // ==============
+  //  General & Misc
+  // ==============
+
+  // ==============
+  // Suggest widget
+  // ==============
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  // ==============
+  // Quick open
+  // ==============
+  {
+    "key": "tab",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  // ==============
+  // Movement & Focus
+  // ==============
+  {
+    "key": "cmd+shift+'",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus && isWindows"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "isWindows"
+  },
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "isWindows"
+  },
+  {
+    "key": "o",
+    "command": "explorer.openAndPassFocus",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode != Insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode != Insert && editorTextFocus && isWindows"
+  },
+  {
+    "key": "cmd+shift+o",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode != Insert && editorTextFocus && isWindows"
+  },
+  // ==============
+  // File Explorer
+  // ==============
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  }
+]
