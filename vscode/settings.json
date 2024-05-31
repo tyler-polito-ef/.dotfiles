@@ -17,6 +17,7 @@
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
   "editor.lineNumbers": "relative",
+  "workbench.editor.wrapTabs": true,
   "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
