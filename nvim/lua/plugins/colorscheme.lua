@@ -8,6 +8,6 @@ return {
 			italic_comment = false,
 		})
 
-		vim.cmd 'colorscheme dracula'
+	vim.cmd.colorscheme('dracula')
 	end,
 }

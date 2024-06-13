@@ -42,6 +42,7 @@ return {
 			-- LSP servers to install (see list here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers )
 			local servers = {
 				cssls = {},
+				--denols = {},
 				gleam = {},
 				graphql = {},
 				html = {},
@@ -60,13 +61,13 @@ return {
 					-- filetypes = { "reason" },
 				},
 				svelte = {},
-				tsserver = {
-					settings = {
-						experimental = {
-							enableProjectDiagnostics = true,
-						},
-					},
-				},
+				--	tsserver = {
+				--		settings = {
+				--			experimental = {
+				--				enableProjectDiagnostics = true,
+				--			},
+				--		},
+				--	},
 				yamlls = {},
 			}
 
@@ -79,17 +80,29 @@ return {
 			-- nvim-cmp supports additional completion capabilities
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			local default_capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+			local nvim_lsp = require("lspconfig")
 
 			-- Iterate over our servers and set them up
 			for name, config in pairs(servers) do
-				require("lspconfig")[name].setup({
+				nvim_lsp[name].setup({
 					capabilities = default_capabilities,
 					filetypes = config.filetypes,
 					handlers = vim.tbl_deep_extend("force", {}, default_handlers, config.handlers or {}),
-					on_attach = on_attach,
+					on_attach = config.on_attach,
 					settings = config.settings,
 				})
 			end
+
+			-- Typescript & Deno config
+			nvim_lsp.denols.setup({
+				-- on_attach = on_attach,
+				root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+			})
+			nvim_lsp.tsserver.setup({
+				-- on_attach = on_attach,
+				root_dir = nvim_lsp.util.root_pattern("package.json"),
+				single_file_support = false,
+			})
 
 			-- Congifure LSP linting, formatting, diagnostics, and code actions
 			local formatting = null_ls.builtins.formatting
