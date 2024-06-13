@@ -104,6 +104,9 @@ return {
 				single_file_support = false,
 			})
 
+      -- GDScript for Godot
+			nvim_lsp.gdscript.setup({})
+
 			-- Congifure LSP linting, formatting, diagnostics, and code actions
 			local formatting = null_ls.builtins.formatting
 			local diagnostics = null_ls.builtins.diagnostics
