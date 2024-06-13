@@ -1,5 +1,5 @@
 return {
-	{
+	lsp({
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall", "Mason" },
@@ -128,5 +128,5 @@ return {
 				},
 			})
 		end,
-	},
+	}),
 }
