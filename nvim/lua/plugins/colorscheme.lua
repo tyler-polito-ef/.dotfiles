@@ -1,12 +1,13 @@
 return {
-  -- add dracula
-  { "Mofiqul/dracula.nvim" },
+	'Mofiqul/dracula.nvim',
+	priority = 1000,
+	lazy = false,
+	config = function()
+		require('dracula').setup({
+			transparent_bg = true,
+			italic_comment = false,
+		})
 
-  -- Configure LazyVim to load dracula
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "dracula",
-    },
-  },
+		vim.cmd 'colorscheme dracula'
+	end,
 }
