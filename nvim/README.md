@@ -2,7 +2,7 @@
 
 ## Todos, painpoints, & bugs
 - [x] Configure `tsserver` to work along side `denols`
-- [] Configure godot (gdscript server + port, etc)
+- [x] Configure godot (gdscript server + port, etc)
 - [x] There is a lot of flashing where (I think) some sort of highlighting (either treesitter or the lsp?) is making all the text flashing
     - I _think_ this only happens when I'm inside my `.config` file so I'll check it off for now.
 ## Notes
