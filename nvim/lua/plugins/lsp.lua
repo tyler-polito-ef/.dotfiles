@@ -57,6 +57,7 @@ return {
 				},
 				marksman = {},
 				sqlls = {},
+        astro = {},
 				tailwindcss = {
 					-- filetypes = { "reason" },
 				},
