@@ -1,0 +1,34 @@
+[
+  {
+    // Editor commands in normal mode
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "ctrl-p": "file_finder::Toggle",
+      "' e": "pane::RevealInProjectPanel", // Treat " ' " as the leader
+      "' l f": "editor::Format", // Treat " ' " as the leader
+      "shift-u": "editor::Redo"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrev"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "g c c": "editor::ToggleComments",
+      "shift-k": "editor::Hover"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "$": "vim::EndOfLineDownward"
+    }
+  }
+]
