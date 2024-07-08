@@ -41,6 +41,20 @@
   // Quick open
   // ==============
   {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen && inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
     "key": "tab",
     "command": "workbench.action.quickOpenNavigateNext",
     "when": "inQuickOpen"

@@ -49,7 +49,7 @@
   "vim.leader": "'",
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": false,
-  "vim.hlsearch": true,
+  "vim.hlsearch": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "l", "f"],
@@ -142,6 +142,9 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
@@ -176,5 +179,10 @@
   // ==============
   // Godot tools
   // ==============
-  "godotTools.lsp.serverPort": 6005
+  "godotTools.lsp.serverPort": 6005,
+
+  // ==============
+  // Github PR
+  // ==============
+  "githubPullRequests.commentExpandState": "collapseAll"
 }
