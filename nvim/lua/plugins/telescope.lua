@@ -8,4 +8,3 @@ return {
     { "<leader>ff", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
   },
 }
-
