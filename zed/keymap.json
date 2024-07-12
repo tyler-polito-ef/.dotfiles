@@ -6,9 +6,12 @@
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePrevItem",
       "ctrl-p": "file_finder::Toggle",
-      "' e": "pane::RevealInProjectPanel", // Treat " ' " as the leader
-      "' l f": "editor::Format", // Treat " ' " as the leader
-      "shift-u": "editor::Redo"
+      "shift-u": "editor::Redo",
+      // Treat " ' " as vim leader
+      "' e": "pane::RevealInProjectPanel",
+      "' b": "workspace::ToggleLeftDock",
+      "' l f": "editor::Format",
+      "' t": "workspace::NewCenterTerminal"
     }
   },
   {
@@ -29,6 +32,13 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "$": "vim::EndOfLineDownward"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-shift-l": "pane::ActivateNextItem",
+      "cmd-shift-h": "pane::ActivatePrevItem"
     }
   }
 ]
