@@ -1,7 +1,6 @@
 {
   // ==============
   //  Editor & Workbench
-  // ==============
   "editor.tabSize": 2,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontLigatures": true,

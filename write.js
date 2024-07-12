@@ -79,11 +79,11 @@ const writeNvimFiles = async () => {
 };
 
 const main = async () => {
-  await writeVsCodeFiles();
-  await writeZshFiles();
+  // await writeVsCodeFiles();
+  // await writeZshFiles();
   await writeZedFiles();
-  await writeAlacrittyFiles();
-  await writeNvimFiles();
+  // await writeAlacrittyFiles();
+  // await writeNvimFiles();
 };
 
 main();
