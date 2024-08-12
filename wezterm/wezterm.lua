@@ -61,8 +61,19 @@ config.keys = {
 	{
 		key = "/",
 		mods = "LEADER",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
+	{
+		key = "w",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	{
+		key = "q",
+		mods = "LEADER",
+		action = wezterm.action.ShowTabNavigator,
+	},
+	{ key = "F9", mods = "ALT", action = wezterm.action.ShowTabNavigator },
 	move_pane("j", "Down"),
 	move_pane("k", "Up"),
 	move_pane("h", "Left"),
@@ -73,12 +84,13 @@ config.keys = {
 		-- Present in to our project picker
 		action = projects.choose_project(),
 	},
-	{
-		key = "f",
-		mods = "LEADER",
-		-- Present a list of existing workspaces
-		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
-	},
+	-- IDK if this is needed, but its kidna neat
+	-- {
+	-- 	key = "f",
+	-- 	mods = "LEADER",
+	-- 	-- Present a list of existing workspaces
+	-- 	action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+	-- },
 }
 
 return config
