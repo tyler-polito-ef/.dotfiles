@@ -7,9 +7,6 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "chat_panel": {
-    "dock": "right"
-  },
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "soft_wrap": "editor_width",
@@ -20,5 +17,28 @@
   "relative_line_numbers": true,
   "file_types": {
     "CSS": ["scss"]
+  },
+  "file_scan_exclusions": ["**/gat-web"],
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  // AI stuff
+  "assistant": {
+    "version": "2",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20240620"
+    }
+  },
+  // Move unnecessary panels to the left
+  "notification_panel": {
+    "dock": "left"
+  },
+  "chat_panel": {
+    "dock": "left"
   }
 }
