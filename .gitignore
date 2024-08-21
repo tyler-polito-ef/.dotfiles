@@ -1,1 +1,5 @@
 *.env
+.tmp*
+*.mdb
+.DS_STORE
+embeddings_*

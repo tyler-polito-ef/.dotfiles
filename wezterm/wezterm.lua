@@ -7,6 +7,7 @@ local config = wezterm.config_builder()
 config.set_environment_variables = {
 	PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
+config.default_cwd = wezterm.home_dir
 
 config.color_scheme = "Darcula (base16)"
 config.window_background_opacity = 0.9
@@ -37,18 +38,22 @@ config.keys = {
 	-- Sends ESC + b and ESC + f sequence, which is used
 	-- for telling your shell to jump back/forward.
 	{
-		-- When the left arrow is pressed
 		key = "LeftArrow",
-		-- With the "Option" key modifier held down
 		mods = "OPT",
-		-- Perform this action, in this case - sending ESC + B
-		-- to the terminal
 		action = wezterm.action.SendString("\x1bb"),
 	},
 	{
 		key = "RightArrow",
 		mods = "OPT",
 		action = wezterm.action.SendString("\x1bf"),
+	},
+	-- Spawn new tabs in the homedir
+	{
+		key = "t",
+		mods = "SUPER",
+		action = wezterm.action.SpawnCommandInNewTab({
+			cwd = wezterm.home_dir,
+		}),
 	},
 	{
 		key = ",",
@@ -72,6 +77,16 @@ config.keys = {
 		key = "q",
 		mods = "LEADER",
 		action = wezterm.action.ShowTabNavigator,
+	},
+	{
+		key = "h",
+		mods = "SHIFT|SUPER",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	{
+		key = "l",
+		mods = "SHIFT|SUPER",
+		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{ key = "F9", mods = "ALT", action = wezterm.action.ShowTabNavigator },
 	move_pane("j", "Down"),

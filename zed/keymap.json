@@ -1,17 +1,38 @@
 [
   {
-    // Editor commands in normal mode
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePrevItem",
       "ctrl-p": "file_finder::Toggle",
       "shift-u": "editor::Redo",
-      // Treat " ' " as vim leader
+      // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
       "' b": "workspace::ToggleLeftDock",
       "' l f": "editor::Format",
-      "' t": "workspace::NewCenterTerminal"
+      "' f t": "workspace::NewCenterTerminal",
+      "' c r": "editor::Rename",
+      "' s s": "workspace::SaveWithoutFormat",
+      "' w": "pane::CloseActiveItem",
+      "' s w": "pane::DeploySearch",
+      "' c a": "editor::ToggleCodeActions",
+      "' u h": "editor::ToggleInlayHints"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && inline_completion && !showing_completions",
+    "bindings": {
+      "tab": null,
+      "ctrl-y": "editor::AcceptInlineCompletion"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "j": ["vim::Down", { "displayLines": true }],
+      "g j": "vim::Down",
+      "k": ["vim::Up", { "displayLines": true }],
+      "g k": "vim::Up"
     }
   },
   {
@@ -39,6 +60,22 @@
     "bindings": {
       "cmd-shift-l": "pane::ActivateNextItem",
       "cmd-shift-h": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": "file_finder::Toggle"
+    }
+  },
+  {
+    // netrw compatibility
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename"
     }
   }
 ]
