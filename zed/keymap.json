@@ -11,7 +11,20 @@
       "' e": "pane::RevealInProjectPanel",
       "' b": "workspace::ToggleLeftDock",
       "' l f": "editor::Format",
-      "' t": "workspace::NewCenterTerminal"
+      "' f t": "workspace::NewCenterTerminal",
+      "' c r": "editor::Rename",
+      "' s s": "workspace::SaveWithoutFormat",
+      "' w": "pane::CloseActiveItem",
+      "' s w": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "j": ["vim::Down", { "displayLines": true }],
+      "g j": "vim::Down",
+      "k": ["vim::Up", { "displayLines": true }],
+      "g k": "vim::Up"
     }
   },
   {
@@ -39,6 +52,13 @@
     "bindings": {
       "cmd-shift-l": "pane::ActivateNextItem",
       "cmd-shift-h": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    // netrw compatibility
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile"
     }
   }
 ]

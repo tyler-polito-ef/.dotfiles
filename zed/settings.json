@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "version": "2",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20240620"
+    }
+  },
   "chat_panel": {
     "dock": "right"
   },
@@ -20,5 +27,6 @@
   "relative_line_numbers": true,
   "file_types": {
     "CSS": ["scss"]
-  }
+  },
+  "file_scan_exclusions": ["**/gat-web"]
 }
