@@ -5,7 +5,10 @@
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePrevItem",
       "ctrl-p": "file_finder::Toggle",
-      "shift-u": "editor::Redo",
+      "ctrl-r": "editor::Redo",
+      "ctrl-i": "assistant::InlineAssist",
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPrevDiagnostic",
       // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
       "' b": "workspace::ToggleLeftDock",
@@ -16,7 +19,15 @@
       "' w": "pane::CloseActiveItem",
       "' s w": "pane::DeploySearch",
       "' c a": "editor::ToggleCodeActions",
-      "' u h": "editor::ToggleInlayHints"
+      "' u h": "editor::ToggleInlayHints",
+      "' k w": "pane::CloseAllItems",
+      "' k w r": "pane::CloseItemsToTheRight",
+      "' g g": [
+        "workspace::SendKeystrokes",
+        "cmd-shift-p new center terminal enter lg enter"
+      ],
+      // Tasks
+      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }]
     }
   },
   {

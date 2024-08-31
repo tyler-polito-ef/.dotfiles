@@ -1,0 +1,102 @@
+{
+  "name": "Converted Relaxed Theme",
+  "appearance": "dark",
+  "style": {
+    "windowBackgroundAppearance": "Opaque",
+    "accents": [],
+    "colors": {
+      "borderFocused": "#353a44"
+    },
+    "status": {
+      "hint": "#969696ff"
+    },
+    "players": [],
+    "syntax": {
+      "attribute": {
+        "color": "#b06698",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "comment": {
+        "color": "#727272",
+        "fontStyle": "Italic",
+        "fontWeight": null
+      },
+      "constant": {
+        "color": "#d9d9d9",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "constructor": {
+        "color": "#6a8799",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "embedded": {
+        "color": "#6a8799",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "function": {
+        "color": "#7eaac7",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "keyword": {
+        "color": "#b06698",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "label": {
+        "color": "#909d63",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "operator": {
+        "color": "#d9d9d9",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "property": {
+        "color": "#7eaac7",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "punctuation": {
+        "color": "#727272",
+        "fontStyle": "Italic",
+        "fontWeight": null
+      },
+      "string": {
+        "color": "#d9d9d9",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "string.regex": {
+        "color": "#acbbd0",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "tag": {
+        "color": "#6a8799",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "title": {
+        "color": "#6894c1",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "type": {
+        "color": "#b06698",
+        "fontStyle": null,
+        "fontWeight": null
+      },
+      "variable": {
+        "color": "#d9d9d9",
+        "fontStyle": null,
+        "fontWeight": null
+      }
+    }
+  }
+}
