@@ -22,6 +22,7 @@
       "' u h": "editor::ToggleInlayHints",
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
+      "' r s": "editor::RestartLanguageServer",
       "' g g": [
         "workspace::SendKeystrokes",
         "cmd-shift-p new center terminal enter lg enter"
@@ -34,6 +35,12 @@
     "context": "Editor && vim_mode == insert && inline_completion && !showing_completions",
     "bindings": {
       "tab": null,
+      "ctrl-y": "editor::AcceptInlineCompletion"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
       "ctrl-y": "editor::AcceptInlineCompletion"
     }
   },

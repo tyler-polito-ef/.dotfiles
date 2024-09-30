@@ -40,5 +40,8 @@
   },
   "chat_panel": {
     "dock": "left"
+  },
+  "tabs": {
+    "file_icons": true
   }
 }
