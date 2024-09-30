@@ -9,6 +9,8 @@
       "ctrl-i": "assistant::InlineAssist",
       "] e": "editor::GoToDiagnostic",
       "[ e": "editor::GoToPrevDiagnostic",
+      "ctrl-alt-h": "pane::SwapItemLeft",
+      "ctrl-alt-l": "pane::SwapItemRight",
       // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
       "' b": "workspace::ToggleLeftDock",
