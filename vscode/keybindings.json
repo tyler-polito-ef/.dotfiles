@@ -21,6 +21,12 @@
     "args": "localize",
     "when": "editorTextFocus"
   },
+  {
+    "key": "shift+alt+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "turbo: typecheck",
+    "when": "editorTextFocus"
+  },
 
   // ==============
   // Suggest widget
@@ -105,24 +111,14 @@
     "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
   },
   {
-    "key": "cmd+o",
+    "key": "ctrl+o",
     "command": "workbench.action.navigateBack",
     "when": "canNavigateBack && vim.mode != Insert && editorTextFocus"
   },
   {
-    "key": "ctrl+o",
-    "command": "workbench.action.navigateBack",
-    "when": "canNavigateBack && vim.mode != Insert && editorTextFocus && isWindows"
-  },
-  {
-    "key": "cmd+shift+o",
+    "key": "ctrl+i",
     "command": "workbench.action.navigateForward",
     "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.navigateForward",
-    "when": "canNavigateForward && vim.mode != Insert && editorTextFocus && isWindows"
   },
   // ==============
   // File Explorer
@@ -136,5 +132,10 @@
     "key": "d",
     "command": "deleteFile",
     "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
   }
 ]

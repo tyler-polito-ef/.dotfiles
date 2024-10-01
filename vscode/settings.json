@@ -65,6 +65,11 @@
       "when": "mdb.isPlayground"
     },
     {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
       "before": ["<leader>", "e"],
       "commands": ["workbench.files.action.focusFilesExplorer"]
     },
@@ -83,6 +88,24 @@
     {
       "before": ["U"],
       "commands": ["redo"]
+    },
+
+    // Movement
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["j"]
+    },
+    {
+      "before": ["g", "k"],
+      "after": ["k"]
     },
 
     // Harpoon
@@ -120,6 +143,24 @@
     {
       "before": ["g", "_"],
       "after": ["$"]
+    },
+
+    // Movement
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["j"]
+    },
+    {
+      "before": ["g", "k"],
+      "after": ["k"]
     }
   ],
 
@@ -208,5 +249,4 @@
   "mdb.confirmDeleteDocument": true,
   "mdb.confirmRunAll": false,
   "git.openRepositoryInParentFolders": "never"
-  // "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }
