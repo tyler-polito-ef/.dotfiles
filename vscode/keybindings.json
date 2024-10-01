@@ -4,6 +4,25 @@
   // ==============
 
   // ==============
+  //  Copilot
+  // ==============
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+
+  // ==============
+  //  Tasks
+  // ==============
+  {
+    "key": "shift+alt+l",
+    "command": "workbench.action.tasks.runTask",
+    "args": "localize",
+    "when": "editorTextFocus"
+  },
+
+  // ==============
   // Suggest widget
   // ==============
   {
@@ -16,33 +35,16 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
   },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus && isWindows"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus && isWindows"
-  },
-
   // ==============
   // Quick open
   // ==============
   {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+ctrl+p",
+    "command": "workbench.action.quickTextSearch"
   },
   {
     "key": "ctrl+j",
@@ -73,22 +75,24 @@
     "when": "!editorTextFocus"
   },
   {
-    "key": "ctrl+shift+'",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus && isWindows"
-  },
-  {
-    "key": "cmd+shift+l",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+shift+l",
+    "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "isWindows"
+    "when": "vim.mode != Insert"
   },
   {
-    "key": "cmd+shift+h",
-    "command": "workbench.action.previousEditor"
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "vim.mode != Insert"
+  },
+  {
+    "key": "cmd+shift+j",
+    "command": "editor.action.marker.next",
+    "when": "vim.mode != Insert"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "editor.action.marker.prev",
+    "when": "vim.mode != Insert"
   },
   {
     "key": "ctrl+shift+h",

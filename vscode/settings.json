@@ -1,6 +1,7 @@
 {
   // ==============
   //  Editor & Workbench
+  // ==============
   "editor.tabSize": 2,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontLigatures": true,
@@ -17,7 +18,7 @@
   "editor.fontSize": 16,
   "editor.lineNumbers": "relative",
   "workbench.editor.wrapTabs": true,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
@@ -53,6 +54,15 @@
     {
       "before": ["<leader>", "l", "f"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.action.createTerminalEditor"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["mdb.runAllPlaygroundBlocks"],
+      "when": "mdb.isPlayground"
     },
     {
       "before": ["<leader>", "e"],
@@ -175,6 +185,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "files.exclude": {
+    "node_modules/": true,
+    "apps/gat-web/": true
+  },
+
   // ==============
   // Godot tools
   // ==============
@@ -183,5 +198,15 @@
   // ==============
   // Github PR
   // ==============
-  "githubPullRequests.commentExpandState": "collapseAll"
+  "githubPullRequests.commentExpandState": "collapseAll",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true
+  },
+  "git.confirmSync": false,
+  "githubPullRequests.pullBranch": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "mdb.confirmDeleteDocument": true,
+  "mdb.confirmRunAll": false,
+  "git.openRepositoryInParentFolders": "never"
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }
