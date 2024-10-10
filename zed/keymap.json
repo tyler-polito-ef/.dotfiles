@@ -9,6 +9,8 @@
       "ctrl-i": "assistant::InlineAssist",
       "] e": "editor::GoToDiagnostic",
       "[ e": "editor::GoToPrevDiagnostic",
+      "ctrl-alt-h": "pane::SwapItemLeft",
+      "ctrl-alt-l": "pane::SwapItemRight",
       // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
       "' b": "workspace::ToggleLeftDock",
@@ -23,6 +25,7 @@
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
       "alt-i": "editor::ShowInlineCompletion",
+      "' r s": "editor::RestartLanguageServer",
       "' g g": [
         "workspace::SendKeystrokes",
         "cmd-shift-p new center terminal enter lg enter"
@@ -35,6 +38,12 @@
     "context": "Editor && vim_mode == insert && inline_completion && !showing_completions",
     "bindings": {
       "tab": null,
+      "ctrl-y": "editor::AcceptInlineCompletion"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
       "ctrl-y": "editor::AcceptInlineCompletion"
     }
   },

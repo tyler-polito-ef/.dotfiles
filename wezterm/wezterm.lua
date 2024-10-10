@@ -69,6 +69,12 @@ config.keys = {
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
+		key = "|",
+		mods = "LEADER",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+
 		key = "w",
 		mods = "LEADER",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
@@ -88,7 +94,17 @@ config.keys = {
 		mods = "SHIFT|SUPER",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
-	{ key = "F9", mods = "ALT", action = wezterm.action.ShowTabNavigator },
+	-- Move tabs with CMD+CTRL+H/L
+	{
+		key = "l",
+		mods = "SUPER|CTRL",
+		action = wezterm.action.MoveTabRelative(1),
+	},
+	{
+		key = "h",
+		mods = "SUPER|CTRL",
+		action = wezterm.action.MoveTabRelative(-1),
+	},
 	move_pane("j", "Down"),
 	move_pane("k", "Up"),
 	move_pane("h", "Left"),

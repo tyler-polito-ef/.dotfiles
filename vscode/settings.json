@@ -1,6 +1,7 @@
 {
   // ==============
   //  Editor & Workbench
+  // ==============
   "editor.tabSize": 2,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontLigatures": true,
@@ -17,7 +18,7 @@
   "editor.fontSize": 16,
   "editor.lineNumbers": "relative",
   "workbench.editor.wrapTabs": true,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.iconTheme": "bearded-icons",
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
@@ -49,10 +50,52 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": false,
   "vim.hlsearch": false,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.highlightedyank.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    // TODO: Should try and figure this out
+    // {
+    //   "before": ["/"],
+    //   "commands": ["actions.find"],
+    //   "when": "editorFocus || editorIsOpen"
+    // },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "k", "w"],
+      "commands": ["workbench.action.closeAllEditors"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
     {
       "before": ["<leader>", "l", "f"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.action.createTerminalEditor"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["mdb.runAllPlaygroundBlocks"],
+      "when": "mdb.isPlayground"
+    },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
       "before": ["<leader>", "e"],
@@ -73,6 +116,32 @@
     {
       "before": ["U"],
       "commands": ["redo"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev"]
+    },
+
+    // Movement
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["j"]
+    },
+    {
+      "before": ["g", "k"],
+      "after": ["k"]
     },
 
     // Harpoon
@@ -110,6 +179,24 @@
     {
       "before": ["g", "_"],
       "after": ["$"]
+    },
+
+    // Movement
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["j"]
+    },
+    {
+      "before": ["g", "k"],
+      "after": ["k"]
     }
   ],
 
@@ -124,7 +211,7 @@
     "gdscript": false
   },
   // ==============
-  // Code formatters
+  // Language settings & code formatters
   // ==============
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -176,6 +263,15 @@
   },
 
   // ==============
+  // Excluded files & folders
+  // ==============
+
+  "files.exclude": {
+    "node_modules/": true,
+    "apps/gat-web/": true
+  },
+
+  // ==============
   // Godot tools
   // ==============
   "godotTools.lsp.serverPort": 6005,
@@ -183,5 +279,14 @@
   // ==============
   // Github PR
   // ==============
-  "githubPullRequests.commentExpandState": "collapseAll"
+  "githubPullRequests.commentExpandState": "collapseAll",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true
+  },
+  "git.confirmSync": false,
+  "githubPullRequests.pullBranch": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "mdb.confirmDeleteDocument": true,
+  "mdb.confirmRunAll": false,
+  "git.openRepositoryInParentFolders": "never"
 }
