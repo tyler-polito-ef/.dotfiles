@@ -13,6 +13,20 @@
   },
 
   // ==============
+  // Code actions
+  // ==============
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  // ==============
   //  Tasks
   // ==============
   {
@@ -83,22 +97,12 @@
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "vim.mode != Insert"
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
   },
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "vim.mode != Insert"
-  },
-  {
-    "key": "cmd+shift+j",
-    "command": "editor.action.marker.next",
-    "when": "vim.mode != Insert"
-  },
-  {
-    "key": "cmd+shift+k",
-    "command": "editor.action.marker.prev",
-    "when": "vim.mode != Insert"
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
   },
   {
     "key": "ctrl+shift+h",
@@ -120,6 +124,7 @@
     "command": "workbench.action.navigateForward",
     "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
   },
+
   // ==============
   // File Explorer
   // ==============
@@ -136,6 +141,11 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
     "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
   }
 ]

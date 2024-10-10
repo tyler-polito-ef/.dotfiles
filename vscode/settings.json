@@ -50,7 +50,35 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": false,
   "vim.hlsearch": false,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.highlightedyank.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    // TODO: Should try and figure this out
+    // {
+    //   "before": ["/"],
+    //   "commands": ["actions.find"],
+    //   "when": "editorFocus || editorIsOpen"
+    // },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "k", "w"],
+      "commands": ["workbench.action.closeAllEditors"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
     {
       "before": ["<leader>", "l", "f"],
       "commands": ["editor.action.formatDocument"]
@@ -88,6 +116,14 @@
     {
       "before": ["U"],
       "commands": ["redo"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev"]
     },
 
     // Movement
@@ -175,7 +211,7 @@
     "gdscript": false
   },
   // ==============
-  // Code formatters
+  // Language settings & code formatters
   // ==============
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -225,6 +261,10 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // ==============
+  // Excluded files & folders
+  // ==============
 
   "files.exclude": {
     "node_modules/": true,
