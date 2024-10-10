@@ -39,6 +39,7 @@
       "hard_tabs": true
     }
   },
+  // "show_inline_completions": false,
   // Move unnecessary panels to the left
   "notification_panel": {
     "dock": "left"

@@ -22,6 +22,7 @@
       "' u h": "editor::ToggleInlayHints",
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
+      "alt-i": "editor::ShowInlineCompletion",
       "' g g": [
         "workspace::SendKeystrokes",
         "cmd-shift-p new center terminal enter lg enter"
