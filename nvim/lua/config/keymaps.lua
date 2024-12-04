@@ -7,4 +7,6 @@ vim.keymap.set({ "n", "v" }, "<leader>lf", function()
   LazyVim.format({ force = true })
 end, { desc = "Format file" })
 
-vim.keymap.set("n", "<leader>w", LazyVim.ui.bufremove, { desc = "Close/Delete Buffer" })
+vim.keymap.set("n", "<leader>w", function()
+  Snacks.bufdelete()
+end, { desc = "Close/Delete Buffer" })
