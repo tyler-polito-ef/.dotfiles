@@ -1,11 +1,15 @@
 # Apperance
 theme = Dracula
+background = 000000
 
 font-size = 16
-window-inherit-font-size = false 
+window-inherit-font-size = false
 
 cursor-style = block
 shell-integration-features = no-cursor
+
+working-directory = home 
+window-inherit-working-directory = false
 
 # Keybinds
 keybind = super+shift+h=previous_tab
