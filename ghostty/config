@@ -1,0 +1,15 @@
+# Apperance
+theme = Dracula
+
+font-size = 16
+window-inherit-font-size = false 
+
+cursor-style = block
+shell-integration-features = no-cursor
+
+# Keybinds
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
+keybind = super+d=new_split:right
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+h=goto_split:left
