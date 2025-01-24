@@ -2,6 +2,16 @@
   // ==============
   //  General & Misc
   // ==============
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
 
   // ==============
   //  Copilot
@@ -39,6 +49,12 @@
     "key": "shift+alt+b",
     "command": "workbench.action.tasks.runTask",
     "args": "turbo: typecheck",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "graphql gen",
     "when": "editorTextFocus"
   },
 
