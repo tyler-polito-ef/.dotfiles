@@ -24,14 +24,17 @@
       "' u h": "editor::ToggleInlayHints",
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
-      "alt-i": "editor::ShowInlineCompletion",
       "' r s": "editor::RestartLanguageServer",
       "' g g": [
         "workspace::SendKeystrokes",
         "cmd-shift-p new center terminal enter lg enter"
       ],
       // Tasks
-      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }]
+      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }],
+      "shift-alt-b": [
+        "task::Spawn",
+        { "task_name": "Run typecheck:vscode command" }
+      ]
     }
   },
   {

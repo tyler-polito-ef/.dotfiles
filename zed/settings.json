@@ -34,12 +34,6 @@
       "model": "claude-3-5-sonnet-20240620"
     }
   },
-  "languages": {
-    "GDScript": {
-      "hard_tabs": true
-    }
-  },
-  // "show_inline_completions": false,
   // Move unnecessary panels to the left
   "notification_panel": {
     "dock": "left"

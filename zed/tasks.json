@@ -46,5 +46,12 @@
     "use_new_terminal": true,
     "reveal": "always",
     "hide": "on_success"
+  },
+  {
+    "label": "Run typecheck:vscode command",
+    "command": "npm run typecheck:vscode",
+    "use_new_terminal": true,
+    "reveal": "always",
+    "hide": "never"
   }
 ]
