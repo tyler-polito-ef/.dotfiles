@@ -1,5 +1,12 @@
 [
   {
+    // HACK: I want this so I can use ctrl+j/k to move inside the file finder and `"context": "FileFinder && !menu_open",` context does not work so I leave it off here
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "shift-l": "pane::ActivateNextItem",
