@@ -26,8 +26,11 @@
       "' k w r": "pane::CloseItemsToTheRight",
       "' r s": "editor::RestartLanguageServer",
       "' g g": [
-        "workspace::SendKeystrokes",
-        "cmd-shift-p new center terminal enter lg enter"
+        "task::Spawn",
+        {
+          "task_name": "lazygit",
+          "reveal_target": "center"
+        }
       ],
       // Tasks
       "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }],
@@ -35,6 +38,13 @@
         "task::Spawn",
         { "task_name": "Run typecheck:vscode command" }
       ]
+    }
+  },
+  {
+    "context": "FileFinder && !menu_open",
+    "bindings": {
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev"
     }
   },
   {

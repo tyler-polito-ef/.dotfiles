@@ -41,17 +41,10 @@
     "shell": "system"
   },
   {
-    "label": "Run localize command",
-    "command": "loc",
-    "use_new_terminal": true,
-    "reveal": "always",
-    "hide": "on_success"
-  },
-  {
-    "label": "Run typecheck:vscode command",
-    "command": "npm run typecheck:vscode",
-    "use_new_terminal": true,
-    "reveal": "always",
-    "hide": "never"
+    "label": "lazygit",
+    "command": "lazygit",
+    "hide": "always",
+    "allow_concurrent_runs": true,
+    "use_new_terminal": true
   }
 ]
