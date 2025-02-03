@@ -71,6 +71,16 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
   },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
   // ==============
   // Quick open
   // ==============
@@ -163,5 +173,17 @@
     "key": "/",
     "command": "list.find",
     "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  // ==============
+  // Remove annoying keybinds I really hate
+  // ==============
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
   }
 ]
