@@ -10,3 +10,6 @@ end, { desc = "Format file" })
 vim.keymap.set("n", "<leader>w", function()
   Snacks.bufdelete()
 end, { desc = "Close/Delete Buffer" })
+
+vim.keymap.set("n", "<C-p>", LazyVim.pick("files"), { desc = "Find files" })
+vim.keymap.set("n", "<leader>ff", LazyVim.pick("live_grep"), { desc = "Find files" })
