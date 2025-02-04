@@ -46,3 +46,13 @@ opt.scrolloff = 8
 
 -- decrease update time (I think this is 200ms)
 opt.updatetime = 50
+
+-- TODO: Move this to autocmds
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gdscript",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})
