@@ -59,6 +59,17 @@
     //   "commands": ["actions.find"],
     //   "when": "editorFocus || editorIsOpen"
     // },
+
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.debug.start"],
+      "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+      "before": ["<leader>", "R"],
+      "commands": ["workbench.action.debug.stop"],
+      "when": "debuggersAvailable && debugState == 'active'"
+    },
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"],
@@ -86,11 +97,6 @@
     {
       "before": ["<leader>", "f", "t"],
       "commands": ["workbench.action.createTerminalEditor"]
-    },
-    {
-      "before": ["<leader>", "r"],
-      "commands": ["mdb.runAllPlaygroundBlocks"],
-      "when": "mdb.isPlayground"
     },
     {
       "before": ["<leader>", "c", "r"],
@@ -204,11 +210,12 @@
   // Github Copilot
   // ==============
   "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": false,
-    "gdscript": false
+    "gdscript": true
   },
   // ==============
   // Language settings & code formatters
@@ -259,7 +266,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[gdscript]": {
+    "editor.tabSize": 2
   },
 
   // ==============
@@ -288,5 +298,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "mdb.confirmDeleteDocument": true,
   "mdb.confirmRunAll": false,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "svelte.enable-ts-plugin": true,
+  "pixelbyte.love2d.path": "/Applications/love.app/Contents/MacOS/love"
 }

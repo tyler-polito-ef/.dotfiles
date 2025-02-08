@@ -55,6 +55,16 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
   },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
   // ==============
   // Quick open
   // ==============
@@ -124,6 +134,16 @@
     "command": "workbench.action.navigateForward",
     "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
   },
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "vim.mode == Insert || vim.mode == Normal && inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineEditIsVisible || inlineSuggestionVisible"
+  },
 
   // ==============
   // File Explorer
@@ -147,5 +167,47 @@
     "key": "/",
     "command": "list.find",
     "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+
+  // ==============
+  // Love2d
+  // ==============
+  {
+    "key": "alt+l",
+    "command": "pixelbyte.love2d.run",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  // Remove default keybindings
+  {
+    "key": "cmd+l",
+    "command": "-pixelbyte.love2d.run",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-pixelbyte.love2d.debug.toggle",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "ctrl+cmd+l",
+    "command": "-pixelbyte.love2d.runOnsave.toggle",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "ctrl+f1",
+    "command": "-pixelbyte.love2d.help",
+    "when": "editorTextFocus && editorLangId == 'lua'"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  // ==============
+  // Remove annoying keybinds I really hate
+  // ==============
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
   }
 ]
