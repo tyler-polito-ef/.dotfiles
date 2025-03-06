@@ -7,4 +7,3 @@ return {
   -- disable copilot completions inside dropdown menu
   { "zbirenbaum/copilot-cmp", enabled = false },
 }
-

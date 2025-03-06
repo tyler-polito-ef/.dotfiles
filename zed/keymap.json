@@ -1,5 +1,12 @@
 [
   {
+    // HACK: I want this so I can use ctrl+j/k to move inside the file finder and `"context": "FileFinder && !menu_open",` context does not work so I leave it off here
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "shift-l": "pane::ActivateNextItem",
@@ -24,14 +31,27 @@
       "' u h": "editor::ToggleInlayHints",
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
-      "alt-i": "editor::ShowInlineCompletion",
       "' r s": "editor::RestartLanguageServer",
       "' g g": [
-        "workspace::SendKeystrokes",
-        "cmd-shift-p new center terminal enter lg enter"
+        "task::Spawn",
+        {
+          "task_name": "lazygit",
+          "reveal_target": "center"
+        }
       ],
       // Tasks
-      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }]
+      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }],
+      "shift-alt-b": [
+        "task::Spawn",
+        { "task_name": "Run typecheck:vscode command" }
+      ]
+    }
+  },
+  {
+    "context": "FileFinder && !menu_open",
+    "bindings": {
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev"
     }
   },
   {

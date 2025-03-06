@@ -1,15 +1,18 @@
-return {
-  -- "nvim-telescope/telescope.nvim",
-  -- keys = {
-  --   -- disable defaults
-  --   { "<leader>ff", false },
-  --   -- change a keymap
-  --   { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-  --   { "<leader>ff", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
-  -- },
-  -- opts = {
-  --   defaults = {
-  --     file_ignore_patterns = { "node_modules", ".git", "gat%-web" },
-  --   },
-  -- },
-}
+return {}
+-- This file isn't used anymore but I'm going to keep this here anyways
+-- If I get an fzf_lua error I need to probably install fzf globally either via homebrew or apt
+-- return {
+-- "nvim-telescope/telescope.nvim",
+-- keys = {
+--   -- disable defaults
+--   { "<leader>ff", false },
+--   -- change a keymap
+--   { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+--   { "<leader>ff", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+-- },
+-- opts = {
+--   defaults = {
+--     file_ignore_patterns = { "node_modules", ".git", "gat%-web" },
+--   },
+-- },
+-- }

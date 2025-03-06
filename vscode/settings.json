@@ -300,5 +300,6 @@
   "mdb.confirmRunAll": false,
   "git.openRepositoryInParentFolders": "never",
   "svelte.enable-ts-plugin": true,
-  "pixelbyte.love2d.path": "/Applications/love.app/Contents/MacOS/love"
+  "pixelbyte.love2d.path": "/Applications/love.app/Contents/MacOS/love",
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"]
 }
