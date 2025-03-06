@@ -204,6 +204,7 @@
   // Github Copilot
   // ==============
   "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -288,5 +289,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "mdb.confirmDeleteDocument": true,
   "mdb.confirmRunAll": false,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"]
 }
