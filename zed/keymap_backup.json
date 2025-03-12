@@ -3,24 +3,23 @@
     // HACK: I want this so I can use ctrl+j/k to move inside the file finder and `"context": "FileFinder && !menu_open",` context does not work so I leave it off here
     "bindings": {
       "ctrl-j": "menu::SelectNext",
-      "ctrl-k": "menu::SelectPrevious"
+      "ctrl-k": "menu::SelectPrev"
     }
   },
   {
     "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePreviousItem",
+      "shift-h": "pane::ActivatePrevItem",
       "ctrl-p": "file_finder::Toggle",
       "ctrl-r": "editor::Redo",
       "ctrl-i": "assistant::InlineAssist",
       "] e": "editor::GoToDiagnostic",
-      "[ e": "editor::GoToPreviousDiagnostic",
+      "[ e": "editor::GoToPrevDiagnostic",
       "ctrl-alt-h": "pane::SwapItemLeft",
       "ctrl-alt-l": "pane::SwapItemRight",
       // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
-      "' g": "git_panel::ToggleFocus",
       "' b": "workspace::ToggleLeftDock",
       "' l f": "editor::Format",
       "' f t": "workspace::NewCenterTerminal",
@@ -52,28 +51,28 @@
     "context": "FileFinder && !menu_open",
     "bindings": {
       "tab": "menu::SelectNext",
-      "shift-tab": "menu::SelectPrevious"
+      "shift-tab": "menu::SelectPrev"
     }
   },
   {
-    "context": "Editor && vim_mode == insert && edit_prediction && !showing_completions",
+    "context": "Editor && vim_mode == insert && inline_completion && !showing_completions",
     "bindings": {
       "tab": null,
-      "ctrl-y": "editor::AcceptEditPrediction"
+      "ctrl-y": "editor::AcceptInlineCompletion"
     }
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "ctrl-y": "editor::AcceptEditPrediction"
+      "ctrl-y": "editor::AcceptInlineCompletion"
     }
   },
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "j": ["vim::Down", { "display_lines": true }],
+      "j": ["vim::Down", { "displayLines": true }],
       "g j": "vim::Down",
-      "k": ["vim::Up", { "display_lines": true }],
+      "k": ["vim::Up", { "displayLines": true }],
       "g k": "vim::Up"
     }
   },
@@ -81,9 +80,7 @@
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       "tab": "editor::ContextMenuNext",
-      "shift-tab": "editor::ContextMenuPrevious",
-      "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrevious"
+      "shift-tab": "editor::ContextMenuPrev"
     }
   },
   {
@@ -103,14 +100,13 @@
     "context": "Terminal",
     "bindings": {
       "cmd-shift-l": "pane::ActivateNextItem",
-      "cmd-shift-h": "pane::ActivatePreviousItem"
+      "cmd-shift-h": "pane::ActivatePrevItem"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-p": "file_finder::Toggle",
-      "ctrl-shift-p": "command_palette::Toggle"
+      "ctrl-p": "file_finder::Toggle"
     }
   },
   {

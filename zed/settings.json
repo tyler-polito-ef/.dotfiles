@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  // "features": {
+  //   "edit_prediction_provider": "zed" // don't know if work allows this
+  // },
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "soft_wrap": "editor_width",
