@@ -210,13 +210,14 @@
   // Github Copilot
   // ==============
   "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": false,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": false,
     "gdscript": true
   },
+  "chat.agent.enabled": true,
   // ==============
   // Language settings & code formatters
   // ==============
@@ -269,7 +270,9 @@
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[gdscript]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false
   },
 
   // ==============
@@ -277,8 +280,7 @@
   // ==============
 
   "files.exclude": {
-    "node_modules/": true,
-    "apps/gat-web/": true
+    "node_modules/": true
   },
 
   // ==============
@@ -301,5 +303,16 @@
   "git.openRepositoryInParentFolders": "never",
   "svelte.enable-ts-plugin": true,
   "pixelbyte.love2d.path": "/Applications/love.app/Contents/MacOS/love",
-  "errorLens.enabledDiagnosticLevels": ["warning", "info"]
+  // Using the light mode
+  "indentRainbow.indicatorStyle": "light",
+  // we use a simple 1 pixel wide line
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  // the same colors as above but more visible
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+  "svelte.plugin.svelte.runesLegacyModeCodeLens.enable": false
 }
