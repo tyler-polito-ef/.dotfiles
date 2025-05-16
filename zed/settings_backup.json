@@ -7,21 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "agent": {
-    "model_parameters": [],
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
-    },
-    "version": "2"
-  },
-  "features": {
-    // Can't use the zed one without running into odd keybind issues
-    // https://github.com/zed-industries/zed/issues/26543
-    // "edit_prediction_provider": "zed"
-    "edit_prediction_provider": "copilot"
-  },
-  "icon_theme": "Bearded Icon Theme",
+  // "features": {
+  //   "edit_prediction_provider": "zed" // https://github.com/zed-industries/zed/issues/26543
+  // },
+  "icon_theme": "Material Icon Theme",
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "soft_wrap": "editor_width",
@@ -33,12 +22,21 @@
   "file_types": {
     "CSS": ["scss"]
   },
+  "file_scan_exclusions": ["**/gat-web"],
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
   },
   "inlay_hints": {
     "enabled": false
+  },
+  // AI stuff
+  "assistant": {
+    "version": "2",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3-7-sonnet"
+    }
   },
   // Move unnecessary panels to the left
   "notification_panel": {
@@ -50,9 +48,7 @@
   "tabs": {
     "file_icons": true
   },
-  "git": {
-    "inline_blame": {
-      "enabled": false
-    }
+  "edit_predictions": {
+    "mode": "subtle"
   }
 }

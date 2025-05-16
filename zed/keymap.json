@@ -57,6 +57,7 @@
   },
   {
     "context": "Editor && vim_mode == insert && edit_prediction && !showing_completions",
+    "use_key_equivalents": true,
     "bindings": {
       "tab": null,
       "ctrl-y": "editor::AcceptEditPrediction"
@@ -65,6 +66,7 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
+      "tab": null,
       "ctrl-y": "editor::AcceptEditPrediction"
     }
   },
@@ -80,8 +82,8 @@
   {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
-      "tab": "editor::ContextMenuNext",
-      "shift-tab": "editor::ContextMenuPrevious",
+      // "tab": "editor::ContextMenuNext",
+      // "shift-tab": "editor::ContextMenuPrevious",
       "ctrl-j": "editor::ContextMenuNext",
       "ctrl-k": "editor::ContextMenuPrevious"
     }
