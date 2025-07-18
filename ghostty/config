@@ -10,10 +10,13 @@ shell-integration-features = no-cursor
 
 working-directory = home 
 window-inherit-working-directory = false
+window-padding-x = 10
 
 # Keybinds
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = super+shift+h=previous_tab
 keybind = super+shift+l=next_tab
-keybind = super+d=new_split:right
+keybind = super+a>/=new_split:right
 keybind = ctrl+l=goto_split:right
 keybind = ctrl+h=goto_split:left
