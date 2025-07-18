@@ -1,0 +1,242 @@
+[
+  // ==============
+  //  General & Misc
+  // ==============
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
+
+  // ==============
+  //  Copilot
+  // ==============
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "vim.mode == Insert || vim.mode == Normal && inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineEditIsVisible || inlineSuggestionVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.inlineSuggest.jump",
+    "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+
+  // ==============
+  // Cursor
+  // ==============
+
+  // ==============
+  // Code actions
+  // ==============
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  // ==============
+  //  Tasks
+  // ==============
+  {
+    "key": "shift+alt+l",
+    "command": "workbench.action.tasks.runTask",
+    "args": "localize",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "turbo: typecheck",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "graphql gen",
+    "when": "editorTextFocus"
+  },
+
+  // ==============
+  // Suggest widget
+  // ==============
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+
+  // ==============
+  // Quick open
+  // ==============
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+ctrl+p",
+    "command": "workbench.action.quickTextSearch"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen && inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "tab",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  // ==============
+  // Movement & Focus
+  // ==============
+  {
+    "key": "cmd+shift+'",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed && !composerFocused"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed && !composerFocused"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "isWindows"
+  },
+  {
+    "key": "o",
+    "command": "explorer.openAndPassFocus",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode != Insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
+  },
+
+  // ==============
+  // File Explorer
+  // ==============
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  // ==============
+  // Remove annoying keybinds I really hate
+  // ==============
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-cursorai.action.generateInTerminal"
+  },
+  {
+    "key": "ctrl+cmd+y",
+    "command": "editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  }
+]
