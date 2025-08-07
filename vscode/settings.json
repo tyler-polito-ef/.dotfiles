@@ -16,6 +16,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
+  "editor.cursorSurroundingLines": 15,
   "editor.lineNumbers": "relative",
   "workbench.editor.wrapTabs": true,
   "workbench.colorTheme": "Dracula Theme",
@@ -59,17 +60,6 @@
     //   "commands": ["actions.find"],
     //   "when": "editorFocus || editorIsOpen"
     // },
-
-    {
-      "before": ["<leader>", "r"],
-      "commands": ["workbench.action.debug.start"],
-      "when": "debuggersAvailable && debugState == 'inactive'"
-    },
-    {
-      "before": ["<leader>", "R"],
-      "commands": ["workbench.action.debug.stop"],
-      "when": "debuggersAvailable && debugState == 'active'"
-    },
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"],
@@ -78,6 +68,11 @@
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.closeActiveEditor"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.files.saveWithoutFormatting"],
       "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     },
     {
@@ -99,18 +94,38 @@
       "commands": ["workbench.action.createTerminalEditor"]
     },
     {
+      "before": ["<leader>", "r"],
+      "commands": ["mdb.runAllPlaygroundBlocks"],
+      "when": "mdb.isPlayground"
+    },
+
+    {
       "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"],
       "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "c", "s"],
+      "commands": ["references-view.findReferences"]
     },
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.files.action.focusFilesExplorer"]
     },
     {
+      "before": ["<leader>", "g"],
+      "commands": ["workbench.scm.focus"]
+    },
+    {
       "before": ["<leader>", "b"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
+    {
+      "before": ["<leader>", "|"],
+      "commands": ["workbench.action.splitEditor"],
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+
     {
       "before": ["K"],
       "commands": ["editor.action.showHover"]
@@ -207,15 +222,14 @@
   ],
 
   // ==============
-  // Github Copilot
+  // Github Copilot & AI
   // ==============
-  "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.nextEditSuggestions.enabled": false,
+  // "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": false,
-    "gdscript": true
+    "gdscript": false
   },
   "chat.agent.enabled": true,
   // ==============
@@ -242,37 +256,32 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
+      "source.organizeImports": "never"
     }
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
+      "source.organizeImports": "never"
     }
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
+      "source.organizeImports": "never"
     }
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
+      "source.organizeImports": "never"
     }
   },
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "[gdscript]": {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": false,
-    "editor.detectIndentation": false
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // ==============
@@ -280,7 +289,8 @@
   // ==============
 
   "files.exclude": {
-    "node_modules/": true
+    "node_modules/": true,
+    "apps/gat-web/": true
   },
 
   // ==============
@@ -301,18 +311,5 @@
   "mdb.confirmDeleteDocument": true,
   "mdb.confirmRunAll": false,
   "git.openRepositoryInParentFolders": "never",
-  "svelte.enable-ts-plugin": true,
-  "pixelbyte.love2d.path": "/Applications/love.app/Contents/MacOS/love",
-  // Using the light mode
-  "indentRainbow.indicatorStyle": "light",
-  // we use a simple 1 pixel wide line
-  "indentRainbow.lightIndicatorStyleLineWidth": 1,
-  // the same colors as above but more visible
-  "indentRainbow.colors": [
-    "rgba(255,255,64,0.3)",
-    "rgba(127,255,127,0.3)",
-    "rgba(255,127,255,0.3)",
-    "rgba(79,236,236,0.3)"
-  ],
-  "svelte.plugin.svelte.runesLegacyModeCodeLens.enable": false
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"]
 }

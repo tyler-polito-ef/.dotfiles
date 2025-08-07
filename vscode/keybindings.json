@@ -2,6 +2,16 @@
   // ==============
   //  General & Misc
   // ==============
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "vim.mode == Visual && editorTextFocus"
+  },
 
   // ==============
   //  Copilot
@@ -9,8 +19,22 @@
   {
     "key": "ctrl+y",
     "command": "editor.action.inlineSuggest.commit",
-    "when": "editorTextFocus && inlineSuggestionVisible"
+    "when": "vim.mode == Insert || vim.mode == Normal && inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineEditIsVisible || inlineSuggestionVisible"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.inlineSuggest.jump",
+    "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+
+  // ==============
+  // Cursor
+  // ==============
 
   // ==============
   // Code actions
@@ -41,6 +65,12 @@
     "args": "turbo: typecheck",
     "when": "editorTextFocus"
   },
+  {
+    "key": "shift+alt+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "graphql gen",
+    "when": "editorTextFocus"
+  },
 
   // ==============
   // Suggest widget
@@ -65,6 +95,17 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
   },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && editorTextFocus"
+  },
+
   // ==============
   // Quick open
   // ==============
@@ -107,12 +148,12 @@
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed && !composerFocused"
   },
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed && !composerFocused"
   },
   {
     "key": "ctrl+shift+h",
@@ -135,14 +176,14 @@
     "when": "canNavigateForward && vim.mode != Insert && editorTextFocus"
   },
   {
-    "key": "ctrl+y",
-    "command": "editor.action.inlineSuggest.commit",
-    "when": "vim.mode == Insert || vim.mode == Normal && inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    "key": "ctrl+l",
+    "command": "workbench.action.focusNextGroup",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
   },
   {
-    "key": "ctrl+n",
-    "command": "editor.action.inlineSuggest.hide",
-    "when": "inlineEditIsVisible || inlineSuggestionVisible"
+    "key": "ctrl+h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "vim.mode != Insert && !sideBarFocus && !inQuickInput && !searchViewletFocus && !searchInputBoxFocus && !findInputFocussed"
   },
 
   // ==============
@@ -151,7 +192,7 @@
   {
     "key": "a",
     "command": "explorer.newFile",
-    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+    "when": "!editorTextFocus && filesExplorerFocus && explorerViewletVisible && !inputFocus"
   },
   {
     "key": "d",
@@ -161,42 +202,13 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+    // For some reason sidebarFocus is not working here (filesExplorerFocus works but I want escape to work from anywhere _shrug_)
+    "when": "explorerViewletVisible && !editorTextFocus && !inputFocus "
   },
   {
     "key": "/",
     "command": "list.find",
     "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
-  },
-
-  // ==============
-  // Love2d
-  // ==============
-  {
-    "key": "alt+l",
-    "command": "pixelbyte.love2d.run",
-    "when": "editorTextFocus && editorLangId == 'lua'"
-  },
-  // Remove default keybindings
-  {
-    "key": "cmd+l",
-    "command": "-pixelbyte.love2d.run",
-    "when": "editorTextFocus && editorLangId == 'lua'"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "-pixelbyte.love2d.debug.toggle",
-    "when": "editorTextFocus && editorLangId == 'lua'"
-  },
-  {
-    "key": "ctrl+cmd+l",
-    "command": "-pixelbyte.love2d.runOnsave.toggle",
-    "when": "editorTextFocus && editorLangId == 'lua'"
-  },
-  {
-    "key": "ctrl+f1",
-    "command": "-pixelbyte.love2d.help",
-    "when": "editorTextFocus && editorLangId == 'lua'"
   },
   {
     "key": "ctrl+f",
@@ -209,5 +221,28 @@
   {
     "key": "shift+cmd+h",
     "command": "-workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-cursorai.action.generateInTerminal"
+  },
+  {
+    "key": "ctrl+cmd+y",
+    "command": "editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.acceptCursorTabSuggestion",
+    "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "escape",
+    "command": "-filesExplorer.cancelCut",
+    "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus"
   }
 ]

@@ -192,7 +192,7 @@
   {
     "key": "a",
     "command": "explorer.newFile",
-    "when": "!editorTextFocus && explorerViewletVisible && sideBarFocus && !inputFocus"
+    "when": "!editorTextFocus && filesExplorerFocus && explorerViewletVisible && !inputFocus"
   },
   {
     "key": "d",
@@ -202,7 +202,8 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "explorerViewletVisible && sideBarFocus && !inputFocus"
+    // For some reason sidebarFocus is not working here (filesExplorerFocus works but I want escape to work from anywhere _shrug_)
+    "when": "explorerViewletVisible && !editorTextFocus && !inputFocus "
   },
   {
     "key": "/",
@@ -238,5 +239,10 @@
     "key": "tab",
     "command": "-editor.action.acceptCursorTabSuggestion",
     "when": "cpp.shouldAcceptTab"
+  },
+  {
+    "key": "escape",
+    "command": "-filesExplorer.cancelCut",
+    "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus"
   }
 ]
