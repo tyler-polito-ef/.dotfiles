@@ -1,6 +1,6 @@
 [
   {
-    // HACK: I want this so I can use ctrl+j/k to move inside the file finder and `"context": "FileFinder && !menu_open",` context does not work so I leave it off here
+    // HACK: I want this so I can use ctrl+j/k to move inside the file finder and `"context": "FileFinder && !menu_open",` context does not work so I leave it off here. This is mostly for the filepicker
     "bindings": {
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious"
@@ -29,10 +29,12 @@
       "' w": "pane::CloseActiveItem",
       "' s w": "pane::DeploySearch",
       "' c a": "editor::ToggleCodeActions",
+      "' c s": "editor::FindAllReferences",
       "' u h": "editor::ToggleInlayHints",
       "' k w": "pane::CloseAllItems",
       "' k w r": "pane::CloseItemsToTheRight",
       "' r s": "editor::RestartLanguageServer",
+      "' g b": "git::Blame",
       "' g g": [
         "task::Spawn",
         {
@@ -60,14 +62,14 @@
     "use_key_equivalents": true,
     "bindings": {
       "tab": null,
-      "ctrl-y": "editor::AcceptEditPrediction"
+      "cmd-y": "editor::AcceptEditPrediction"
     }
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "tab": null,
-      "ctrl-y": "editor::AcceptEditPrediction"
+      "cmd-y": "editor::AcceptEditPrediction"
     }
   },
   {
@@ -82,8 +84,6 @@
   {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
-      // "tab": "editor::ContextMenuNext",
-      // "shift-tab": "editor::ContextMenuPrevious",
       "ctrl-j": "editor::ContextMenuNext",
       "ctrl-k": "editor::ContextMenuPrevious"
     }
