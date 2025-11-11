@@ -16,8 +16,8 @@
       "ctrl-i": "assistant::InlineAssist",
       "] e": "editor::GoToDiagnostic",
       "[ e": "editor::GoToPreviousDiagnostic",
-      "ctrl-alt-h": "pane::SwapItemLeft",
-      "ctrl-alt-l": "pane::SwapItemRight",
+      "shift-alt-h": "pane::SwapItemLeft",
+      "shift-alt-l": "pane::SwapItemRight",
       // Treat " ' " as vim leader (designed to mirror my neovim/lazy vim keybindings)
       "' e": "pane::RevealInProjectPanel",
       "' g": "git_panel::ToggleFocus",
@@ -42,8 +42,14 @@
           "reveal_target": "center"
         }
       ],
+      "' c a g": [
+        "task::Spawn",
+        {
+          "task_name": "cursor cli",
+          "reveal_target": "center"
+        }
+      ],
       // Tasks
-      "shift-alt-l": ["task::Spawn", { "task_name": "Run localize command" }],
       "shift-alt-b": [
         "task::Spawn",
         { "task_name": "Run typecheck:vscode command" }
@@ -105,7 +111,9 @@
     "context": "Terminal",
     "bindings": {
       "cmd-shift-l": "pane::ActivateNextItem",
-      "cmd-shift-h": "pane::ActivatePreviousItem"
+      "cmd-shift-h": "pane::ActivatePreviousItem",
+      "shift-alt-h": "pane::SwapItemLeft",
+      "shift-alt-l": "pane::SwapItemRight"
     }
   },
   {
@@ -122,7 +130,8 @@
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory",
       "d": "project_panel::Delete",
-      "r": "project_panel::Rename"
+      "r": "project_panel::Rename",
+      "o": "project_panel::OpenPermanent"
     }
   }
 ]

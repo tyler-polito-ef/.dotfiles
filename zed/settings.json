@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  // "disable_ai": true,
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
@@ -15,7 +16,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
+      "model": "claude-sonnet-4"
     }
   },
   "features": {
@@ -32,7 +33,10 @@
   "theme": "Dracula",
   "experimental.theme_overrides": {
     "editor.background": "#000000",
-    "editor.gutter.background": "#000000"
+    "editor.gutter.background": "#000000",
+    "editor.active_line.background": "#000000",
+    "editor.highlighted_line.background": "#000000",
+    "search.match_background": "C9A8F940"
   },
   "buffer_font_size": 18,
   "ui_font_size": 18,
@@ -51,13 +55,6 @@
   "inlay_hints": {
     "enabled": false
   },
-  // Move unnecessary panels to the left
-  "notification_panel": {
-    "dock": "left"
-  },
-  "chat_panel": {
-    "dock": "left"
-  },
   "tabs": {
     "file_icons": true
   },
@@ -65,5 +62,13 @@
     "inline_blame": {
       "enabled": false
     }
+  },
+
+  // Move unnecessary panels to the left
+  "notification_panel": {
+    "dock": null
+  },
+  "collaboration_panel": {
+    "dock": null
   }
 }
