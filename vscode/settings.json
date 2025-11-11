@@ -2,6 +2,7 @@
   // ==============
   //  Editor & Workbench
   // ==============
+  "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontLigatures": true,
@@ -17,11 +18,9 @@
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
   "editor.cursorSurroundingLines": 15,
-  "editor.lineNumbers": "relative",
   "workbench.editor.wrapTabs": true,
   "workbench.colorTheme": "Dracula Theme",
   "workbench.iconTheme": "bearded-icons",
-  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.background": "#000",
     "editorGutter.background": "#000",
@@ -54,12 +53,15 @@
   "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
   "vim.highlightedyank.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
-    // TODO: Should try and figure this out
-    // {
-    //   "before": ["/"],
-    //   "commands": ["actions.find"],
-    //   "when": "editorFocus || editorIsOpen"
-    // },
+    {
+      "before": ["<leader>", "c", "s"],
+      "commands": ["editor.action.revealDefinition"],
+      "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+      "before": ["<leader>", "c", "S"],
+      "commands": ["references-view.findReferences"]
+    },
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"],
@@ -81,8 +83,8 @@
       "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     },
     {
-      "before": ["<leader>", "c", "a"],
-      "commands": ["editor.action.quickFix"],
+      "before": ["<leader>", "k", "r"],
+      "commands": ["workbench.action.closeEditorsToTheRight"],
       "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     },
     {
@@ -98,15 +100,10 @@
       "commands": ["mdb.runAllPlaygroundBlocks"],
       "when": "mdb.isPlayground"
     },
-
     {
       "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"],
       "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-      "before": ["<leader>", "c", "s"],
-      "commands": ["references-view.findReferences"]
     },
     {
       "before": ["<leader>", "e"],
@@ -125,7 +122,6 @@
       "commands": ["workbench.action.splitEditor"],
       "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     },
-
     {
       "before": ["K"],
       "commands": ["editor.action.showHover"]
@@ -146,8 +142,6 @@
       "before": ["[", "e"],
       "commands": ["editor.action.marker.prev"]
     },
-
-    // Movement
     {
       "before": ["j"],
       "after": ["g", "j"]
@@ -164,8 +158,6 @@
       "before": ["g", "k"],
       "after": ["k"]
     },
-
-    // Harpoon
     {
       "before": ["<leader>", "a"],
       "commands": ["vscode-harpoon.addEditor"]
@@ -191,7 +183,6 @@
       "commands": ["vscode-harpoon.gotoEditor3"]
     }
   ],
-  // HACK: Prevent '$' from moving the cursor to the next line
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["$"],
@@ -201,8 +192,6 @@
       "before": ["g", "_"],
       "after": ["$"]
     },
-
-    // Movement
     {
       "before": ["j"],
       "after": ["g", "j"]
@@ -224,14 +213,13 @@
   // ==============
   // Github Copilot & AI
   // ==============
-  // "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": false,
     "gdscript": false
   },
-  "chat.agent.enabled": true,
+
   // ==============
   // Language settings & code formatters
   // ==============
@@ -287,7 +275,6 @@
   // ==============
   // Excluded files & folders
   // ==============
-
   "files.exclude": {
     "node_modules/": true,
     "apps/gat-web/": true
@@ -308,8 +295,20 @@
   "git.confirmSync": false,
   "githubPullRequests.pullBranch": "never",
   "diffEditor.ignoreTrimWhitespace": false,
+
+  // ==============
+  // Misc
+  // ==============
   "mdb.confirmDeleteDocument": true,
   "mdb.confirmRunAll": false,
   "git.openRepositoryInParentFolders": "never",
-  "errorLens.enabledDiagnosticLevels": ["warning", "info"]
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"],
+  "cursor.cpp.disabledLanguages": [
+    "plaintext",
+    "markdown",
+    "scminput",
+    "gdscript"
+  ],
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "git.blame.editorDecoration.enabled": false
 }

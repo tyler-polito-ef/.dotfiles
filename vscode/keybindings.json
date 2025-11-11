@@ -244,5 +244,9 @@
     "key": "escape",
     "command": "-filesExplorer.cancelCut",
     "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "cmd+y",
+    "command": "-aichat.newfollowupaction"
   }
 ]
