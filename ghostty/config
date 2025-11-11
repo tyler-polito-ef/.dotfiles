@@ -1,6 +1,7 @@
 # Apperance
-theme = Dracula
-background = 000000
+theme = Dracula+
+#background = 000000
+
 
 font-size = 16
 window-inherit-font-size = false
@@ -9,14 +10,16 @@ cursor-style = block
 shell-integration-features = no-cursor
 
 working-directory = home 
-window-inherit-working-directory = false
+window-inherit-working-directory = false 
 window-padding-x = 10
+window-new-tab-position = end
 
 # Keybinds
 
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+# keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = super+shift+h=previous_tab
 keybind = super+shift+l=next_tab
 keybind = super+a>/=new_split:right
+keybind = super+a>r=prompt_surface_title
 keybind = ctrl+l=goto_split:right
 keybind = ctrl+h=goto_split:left
