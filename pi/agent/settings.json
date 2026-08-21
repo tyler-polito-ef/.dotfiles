@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.0",
+  "lastChangelogVersion": "0.84.2",
   "defaultProvider": "vercel-ai-gateway",
   "defaultModel": "zai/glm-5.2",
   "defaultThinkingLevel": "high",
@@ -8,19 +8,17 @@
       "source": "npm:@plannotator/pi-extension",
       "skills": []
     },
-    "git:github.com/dmmulroy/pi-mcp",
+    "git:github.com/tpolito/pi-mcp",
     "npm:pi-cursor-sdk"
   ],
   "editorPaddingX": 1,
   "theme": "dracula",
   "enabledModels": [
-    "vercel-ai-gateway/zai/glm-5.2",
-    "vercel-ai-gateway/moonshotai/kimi-k2.7-code",
     "vercel-ai-gateway/moonshotai/kimi-k3",
-    "cursor/opus-5@1m",
     "cursor/composer-2.5:fast",
-    "cursor/claude-sonnet-4-6@1m",
-    "cursor/opus-4.8@300k",
-    "cursor/gpt-5.6-luna@1m"
-  ]
+    "vercel-ai-gateway/openai/gpt-5.6-luna",
+    "vercel-ai-gateway/zai/glm-5.2"
+  ],
+  "tuiMode": "fullscreen",
+  "hideThinkingBlock": true
 }

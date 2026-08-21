@@ -2,7 +2,7 @@
  * Permission Gate Extension
  *
  * Prompts for confirmation before running potentially dangerous bash commands.
- * Patterns checked: rm -rf, sudo, chmod/chown 777
+ * Patterns checked: rm -rf, sudo, chmod/chown 777, git commit/merge/push
  */
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
@@ -12,6 +12,10 @@ export default function (pi: ExtensionAPI) {
     /\brm\s+(-rf?|--recursive)/i,
     /\bsudo\b/i,
     /\b(chmod|chown)\b.*777/i,
+    // git commit/merge/push — destructive or share-behind-your-back. Match
+    // `git` as the command being run (start of line or after ; & | or in a
+    // subshell) so strings like echo "git push" don't trigger.
+    /(^|[;&|]\s*|\$\(\s*)git\s+[^;&|]*\b(commit|merge|push)\b/im,
   ];
 
   pi.on("tool_call", async (event, ctx) => {
