@@ -461,6 +461,8 @@ const messages = [
   "Topping with tests...",
   "Cherry-picking the commits...",
   "Slop forking open source...",
+  "Flying to Rome...",
+  "Scanning the grocery list...",
 ];
 
 function pickRandom(): string {

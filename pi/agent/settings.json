@@ -1,25 +1,23 @@
 {
-  "lastChangelogVersion": "0.84.4",
-  "defaultProvider": "vercel-ai-gateway",
-  "defaultModel": "zai/glm-5.3-flash",
+  "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "pi-claude-cli",
+  "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",
+  "defaultTools": [
+    "+codemode"
+  ],
   "packages": [
     {
       "source": "npm:@plannotator/pi-extension",
       "skills": []
     },
-    "git:github.com/tpolito/pi-mcp",
-    "npm:pi-cursor-sdk"
+    "git:github.com/dmmulroy/pi-claude-cli"
   ],
   "editorPaddingX": 1,
-  "theme": "dracula",
+  "theme": "system",
   "enabledModels": [
-    "vercel-ai-gateway/zai/glm-5.3-flash",
-    "vercel-ai-gateway/moonshotai/kimi-k3",
-    "cursor/composer-2.5:fast",
-    "vercel-ai-gateway/openai/gpt-5.6-luna",
-    "vercel-ai-gateway/zai/glm-5.2",
-    "vercel-ai-gateway/google/gemini-3.8-flash"
+    "pi-claude-cli/claude-opus-5-5",
+    "pi-claude-cli/claude-haiku-5-5"
   ],
   "tuiMode": "fullscreen",
   "hideThinkingBlock": true
