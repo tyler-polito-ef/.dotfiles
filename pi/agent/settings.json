@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.2",
   "defaultProvider": "pi-claude-cli",
   "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",

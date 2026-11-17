@@ -4,6 +4,8 @@
     "bindings": {
       "cmd-j": "menu::SelectNext",
       "cmd-k": "menu::SelectPrevious",
+      "alt-f": "workspace::ZoomIn",
+      "cmd-r": "projects::OpenRecent",
     },
   },
   {
@@ -35,8 +37,14 @@
       "' k w r": "pane::CloseItemsToTheRight",
       "' r s": "editor::RestartLanguageServer",
       "' g b": "git::Blame",
+      "' g i": "editor::ToggleGitBlameInline",
       "' a i": "agent::ToggleFocus",
       "' i": "editor::ToggleFocus",
+      "' p": "pane::TogglePinTab",
+      "' u p": "pane::UnpinAllTabs",
+      "' l t": "language_selector::Toggle",
+      "cmd-o": "pane::GoBack",
+      "cmd-i": "pane::GoForward",
       // Tasks
       "' g g": [
         "task::Spawn",
@@ -52,6 +60,12 @@
     },
   },
   {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu && extension == md",
+    "bindings": {
+      "cmd-e": "markdown::OpenPreview",
+    },
+  },
+  {
     "context": "FileFinder && !menu_open",
     "bindings": {
       "tab": "menu::SelectNext",
@@ -64,7 +78,6 @@
     "bindings": {
       "tab": null,
       // "cmd-y": "editor::AcceptEditPrediction",
-      "tab": "editor::AcceptEditPrediction",
     },
   },
   {
@@ -72,7 +85,6 @@
     "bindings": {
       "tab": null,
       // "cmd-y": "editor::AcceptEditPrediction",
-      "tab": "editor::AcceptEditPrediction",
     },
   },
   {
@@ -116,12 +128,14 @@
   {
     "context": "Workspace",
     "bindings": {
+      "cmd-j": null,
       "ctrl-p": "file_finder::Toggle",
       "ctrl-shift-p": "command_palette::Toggle",
       "cmd-shift-e": "project_panel::ToggleFocus",
       "cmd-shift-b": "outline_panel::ToggleFocus",
       "cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-shift-j": "multi_workspace::ToggleWorkspaceSidebar",
+      "alt-i": "editor::ToggleFocus",
     },
   },
   {
@@ -135,15 +149,11 @@
       "o": "project_panel::OpenPermanent",
     },
   },
-  // unbind defaults
+  // =======================
+  // UNBINDS
+  // =======================
   {
     "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
-    "bindings": {
-      "cmd-j": null,
-    },
-  },
-  {
-    "context": "Workspace",
     "bindings": {
       "cmd-j": null,
     },
@@ -160,4 +170,21 @@
       "cmd-shift-g": "search::SelectPreviousMatch",
     },
   },
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "cmd-e": "buffer_search::UseSelectionForFind",
+    },
+  },
+  {
+    "unbind": {
+      "cmd-o": "workspace::Open",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "cmd-i": "editor::ShowSignatureHelp"
+    }
+  }
 ]

@@ -1,9 +1,12 @@
 {
-  "zoom": 1.1,
+  "zoom": 1,
   "sounds": {
     "enabled": true
   },
   "font_size": 14,
   "minimum_contrast": 1,
-  "theme": "dracula"
+  "theme": "merino-dark",
+  "font": "JetBrainsMono Nerd Font",
+  "ui_font": "Geist Mono",
+  "appearance": "dark"
 }
